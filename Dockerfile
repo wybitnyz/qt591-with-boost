@@ -1,5 +1,7 @@
 FROM centos
 MAINTAINER Maciej Czarnecki <mcczarny@gmail.com>
+ENV PATH="${PATH}:/opt/qt/5.9.1/gcc_64/bin/"
+ADD qt-installer-noninteractive.qs .
 RUN yum install -y epel-release git rpm-build rpmdevtools libstdc++-devel gcc-c++ make cmake3 boost boost-devel libcurl libcurl-devel libxml++ libxml++-devel systemd-devel libuuid-devel java-1.7.0-openjdk-devel \
     && curl -sSL https://download.qt.io/official_releases/online_installers/qt-unified-linux-x64-online.run -o qt.run \
 && chmod +x qt.run \
