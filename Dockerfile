@@ -11,7 +11,7 @@ RUN yum install -y epel-release git rpm-build rpmdevtools libstdc++-devel gcc-c+
 && ./qt.run --platform minimal --script qt-installer-noninteractive.qs -v --proxy \
 && mkdir /opt/cmake3 \
 && ./cmake.sh --prefix=/opt/cmake3/ --exclude-subdir --skip-license \
-&& ln ln -s /opt/cmake/bin/cmake /usr/bin/cmake3 \
+&& ln -s /opt/cmake/bin/cmake /usr/bin/cmake3 \
 && rm -rf \
   qt.run \
   cmake.sh \
