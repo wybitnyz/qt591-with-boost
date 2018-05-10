@@ -4,7 +4,7 @@ ENV PATH="${PATH}:/opt/qt/5.9.1/gcc_64/bin/"
 ENV CMAKE_PREFIX_PATH="/opt/qt5.9.1/5.9.1/gcc_64/lib/cmake"
 ADD qt-installer-noninteractive.qs .
 RUN yum install -y epel-release centos-release-scl \
-&& yum install -y devtoolset-7-gcc maven devtoolset-7-gcc-c++ git rpm-build rpmdevtools libstdc++-devel make boost boost-devel libcurl libcurl-devel systemd-devel libuuid-devel java-1.8.0-openjdk-devel mesa-libGL-devel \
+&& yum install -y devtoolset-7-gcc maven devtoolset-7-gcc-c++ git rpm-build rpmdevtools libstdc++-devel make boost boost-devel libcurl libcurl-devel systemd-devel libuuid-devel java-1.8.0-openjdk-devel mesa-libGL-devel lcov \
 && scl enable devtoolset-7 bash \
 && curl -sSL https://download.qt.io/official_releases/online_installers/qt-unified-linux-x64-online.run -o qt.run \
 && chmod +x qt.run \
