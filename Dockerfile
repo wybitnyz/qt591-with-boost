@@ -26,6 +26,5 @@ RUN yum install -y epel-release centos-release-scl \
   /opt/qt/Tools \
   /opt/qt/Docs \
   /opt/qt/network.xml \
-  /opt/qt/Examples \
-  
+  /opt/qt/Examples
 ENTRYPOINT [ "scl" "enable" "devtoolset-7" "--" ]
