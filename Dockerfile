@@ -1,6 +1,6 @@
 FROM centos
 MAINTAINER Maciej Czarnecki <mcczarny@gmail.com>
-ENV PATH="${PATH}:/opt/qt/5.9.1/gcc_64/bin/"
+ENV PATH="${PATH}:/opt/qt5.9.1/5.9.1/gcc_64/bin/"
 ENV CMAKE_PREFIX_PATH="/opt/qt5.9.1/5.9.1/gcc_64/lib/cmake"
 ADD qt-installer-noninteractive.qs .
 RUN yum install -y epel-release centos-release-scl \
