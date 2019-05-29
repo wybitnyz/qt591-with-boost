@@ -6,7 +6,7 @@ ADD qt-installer-noninteractive.qs .
 RUN yum install -y epel-release centos-release-scl \
 && yum install -y devtoolset-7-gcc maven devtoolset-7-gcc-c++ git rpm-build rpmdevtools libstdc++-devel make boost boost-devel libcurl libcurl-devel ncurses-devel systemd-devel libuuid-devel openssl-libs java-1.8.0-openjdk-devel mesa-libGL-devel lcov doxygen hivex-devel \
 && scl enable devtoolset-7 bash \
-&& curl -sSL https://download.qt.io/official_releases/online_installers/qt-unified-linux-x64-online.run -o qt.run \
+&& curl -sSL https://download.qt.io/official_releases/qt/5.9/5.9.1/qt-opensource-linux-x64-5.9.1.run -o qt.run \
 && chmod +x qt.run \
 && curl -sSL https://cmake.org/files/v3.11/cmake-3.11.0-Linux-x86_64.sh -o cmake.sh \
 && chmod +x cmake.sh \
