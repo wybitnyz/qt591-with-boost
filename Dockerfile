@@ -1,12 +1,12 @@
-FROM centos
-MAINTAINER Maciej Czarnecki <mcczarny@gmail.com>
-ENV PATH="${PATH}:/opt/qt/5.9.1/gcc_64/bin/"
+FROM centos:8.1.1911
+MAINTAINER Wybitny Zelbetnik <wybitnyzelbetnik@gmail.com>
+ENV PATH="${PATH}:/opt/qt5.9.1/5.9.1/gcc_64/bin/"
 ENV CMAKE_PREFIX_PATH="/opt/qt5.9.1/5.9.1/gcc_64/lib/cmake"
 ADD qt-installer-noninteractive.qs .
 RUN yum install -y epel-release centos-release-scl \
-&& yum install -y devtoolset-7-gcc maven devtoolset-7-gcc-c++ git rpm-build rpmdevtools libstdc++-devel make boost boost-devel libcurl libcurl-devel systemd-devel libuuid-devel java-1.8.0-openjdk-devel mesa-libGL-devel lcov doxygen graphviz \
+&& yum install -y devtoolset-7-gcc maven devtoolset-7-gcc-c++ git rpm-build rpmdevtools libstdc++-devel make boost boost-devel libcurl libcurl-devel systemd-devel libuuid-devel java-1.8.0-openjdk-devel mesa-libGL-devel lcov doxygen graphviz openssl-libs ncurses-devel hivex-devel \
 && scl enable devtoolset-7 bash \
-&& curl -sSL https://download.qt.io/official_releases/online_installers/qt-unified-linux-x64-online.run -o qt.run \
+&& curl -sSL https://download.qt.io/official_releases/qt/5.9/5.9.1/qt-opensource-linux-x64-5.9.1.run -o qt.run \
 && chmod +x qt.run \
 && curl -sSL https://cmake.org/files/v3.11/cmake-3.11.0-Linux-x86_64.sh -o cmake.sh \
 && chmod +x cmake.sh \
@@ -26,6 +26,5 @@ RUN yum install -y epel-release centos-release-scl \
   /opt/qt/Tools \
   /opt/qt/Docs \
   /opt/qt/network.xml \
-  /opt/qt/Examples \
-  
+  /opt/qt/Examples
 ENTRYPOINT [ "scl" "enable" "devtoolset-7" "--" ]
