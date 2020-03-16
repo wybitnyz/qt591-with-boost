@@ -11,7 +11,6 @@ RUN yum install -y epel-release \
 && ./qt.run --platform minimal --script qt-installer-noninteractive.qs -v --proxy \
 && rm -rf \
   qt.run \
-  cmake.sh \
   /var/lib/apt/lists/* \
   /opt/qt/update.rcc \
   /opt/qt/components.xml \
