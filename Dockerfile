@@ -1,4 +1,4 @@
-FROM centos:8.1.1911
+FROM centos:centos8.2.2004
 ENV PATH="${PATH}:/opt/qt5.9.1/5.9.1/gcc_64/bin/"
 ENV CMAKE_PREFIX_PATH="/opt/qt5.9.1/5.9.1/gcc_64/lib/cmake"
 ADD qt-installer-noninteractive.qs .
